@@ -1,0 +1,108 @@
+## Formatting options for Artistic Style
+## http://astyle.sourceforge.net/
+##
+##
+## To install Artistic Style 3.0.1 on Ubuntu
+##   1. cd ~/work
+##   2. wget https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.0.1/astyle_3.0.1_linux.tar.gz
+##   3. tar xzf astyle_3.0.1_linux.tar.gz
+##   4. cd astyle/build/gcc
+##   5. make
+##   6. sudo make install
+##
+##
+## To format a single file
+##   1. cd ~/work/barracuda
+##   2. astyle --options=doc/astyle_c.options src/common/src/cmn_mque.c
+##
+##
+## To format entire project
+##   1. cd ~/work/barracuda
+##   2. astyle --options=doc/astyle_c.options --recursive *.c *.h
+##
+##
+## Formatting and indenting can be disabled with comment tags inserted in the source code.
+## The following retains the format of a preprocessor define:
+##
+##   // *INDENT-OFF*
+##   #define FOO_DECLARE_int32_(name) \
+##           FOO_API_ extern ::Int32 FOO_FLAG(name)
+##   // *INDENT-ON*
+##
+
+# Convert tabs to spaces.
+--convert-tabs
+
+# Add braces to unbraced one line conditional statements (e.g. 'if', 'for', 'while'...). The statement must be on a single line.
+--add-braces
+
+# Attach a pointer or reference operator (*, &, or ^) to variable name
+--align-pointer=name
+
+# Attach the closing 'while' of a 'do-while' statement to the closing brace.
+--attach-closing-while
+
+# Lines without logical conditionals will break on a logical conditional (||, &&, ...), comma, paren, semicolon, or space.
+# This option has no effect without max‑code‑length.
+--break-after-logical
+
+# Pad empty lines around header blocks (e.g. 'if', 'for', 'while'...).
+--break-blocks
+
+# Break one line headers (e.g. 'if', 'while', 'else', ...) from a statement residing on the same line.
+--break-one-line-headers
+
+# Indent 'class' and 'struct' blocks so that the entire block is indented.
+--indent-classes
+
+# Indent 'class ' and 'struct' access modifiers, 'public:', 'protected:' and 'private:', one half indent.
+--indent-modifiers
+
+# This option will allow the comments to be indented with the code.
+--indent-col1-comments
+
+# Add extra indentation to namespace blocks. 
+--indent-namespaces
+
+# Indent using 2 spaces per indent
+--indent=spaces=2
+
+# Indent 'switch' blocks so that the 'case X:' statements are indented in the switch block.
+--indent-switches
+
+# Don't break one-line blocks
+--keep-one-line-blocks
+
+# Don't break complex statements and multiple statements residing on a single line
+--keep-one-line-statements
+
+# Use CRLF line end style
+--lineend=windows
+
+# Break a line if the code exceeds 80 characters
+--max-code-length=120
+
+# Set the maximum of # spaces to indent a continuation line. 
+--max-instatement-indent=120
+
+# Set the minimal indent that is added when a header is built of multiple lines.
+--min-conditional-indent=0
+
+# Indent as C/C++
+--mode=c
+
+# Insert space padding after paren headers only (e.g. 'if', 'for', 'while'...)
+--pad-header
+
+# Insert space padding around operators. This will also pad commas.
+--pad-oper
+
+# One true brace style formatting/indenting uses non-broken brackets
+--style=1tbs
+
+# No backup file suffix, i.e. don't back up the files, since this would just
+# make a mess of the source tree.  If astyle screws up, we'll rely on git.
+--suffix=none
+
+# Remove padding, if ( true ) becomes if (true).
+--unpad-paren

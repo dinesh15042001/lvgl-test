@@ -1,0 +1,3 @@
+[submodule "LCSGraphics/lvgl"]
+	path = LCSGraphics/lvgl
+	url = git@github.com:lcscontrols/lvgl.git
